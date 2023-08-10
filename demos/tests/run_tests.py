@@ -78,16 +78,12 @@ def build_argparser():
         help='directory to use as the cache for the model downloader')
     parser.add_argument('--log-file', type=Path,
         help='path to log file')
-    parser.add_argument('--mo', type=Path, metavar='MO.PY',
-        help='Model Optimizer entry point script')
     parser.add_argument('--models-dir', type=Path, metavar='DIR',
         help='directory with pre-converted models (IRs)')
     parser.add_argument('--precisions', type=str, nargs='+', default=['FP16', 'FP16-INT8'],
         help='IR precisions for all models. By default, models are tested in FP16, FP16-INT8 precisions')
     parser.add_argument('--report-file', type=Path,
         help='path to report file')
-    parser.add_argument('--scope', default='base', choices=('base', 'performance'),
-        help='The scenario for testing demos.')
     parser.add_argument('--supported-devices', type=parser_paths_list,
         help='paths to Markdown files with supported devices for each model')
     return parser
